@@ -43,7 +43,7 @@ static char *
 ngx_http_json_log_loc_output(ngx_conf_t *cf, ngx_command_t *cmd, void *conf);
 
 
-static ngx_str_t                  msg_id_variable = ngx_string("$request_id");
+/*static ngx_str_t                  msg_id_variable = ngx_string("$request_id");*/
 
 
 
@@ -553,6 +553,7 @@ ngx_http_json_log_loc_output(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 #if nginx_version >= 1011000
         ngx_http_compile_complex_value_t     ccv;
         /*FIXME: Change this to an user's configured variable */
+        ngx_str_t                  msg_id_variable = ngx_string("$request_id");
 
         /* Set variable for message id */
         ngx_memzero(&ccv, sizeof(ngx_http_compile_complex_value_t));
