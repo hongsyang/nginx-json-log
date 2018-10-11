@@ -165,7 +165,8 @@ ngx_json_log_kafka_add_brokers(ngx_pool_t *pool,
     size_t       ret = 0;
 
     rec = brokers->elts;
-    for (size_t i = 0; i < brokers->nelts; ++i) {
+    size_t i;
+    for (i = 0; i < brokers->nelts; ++i) {
 
         broker = &rec[i];
         value = ngx_json_log_str_dup(pool, broker);
